@@ -17,6 +17,10 @@ module.exports = {
         {
           from: path.resolve(rootDir, "public/assets"),
           to: path.resolve(rootDir, "dist/assets"),
+        },
+        {
+          from: path.resolve(rootDir, "public/fonts"),
+          to: path.resolve(rootDir, "dist/fonts"),
         }
       ]
     }),
