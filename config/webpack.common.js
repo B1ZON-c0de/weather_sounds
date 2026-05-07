@@ -12,6 +12,13 @@ module.exports = {
     clean: true
   },
   plugins: [
-    new CopyPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(rootDir, "public/assets"),
+          to: path.resolve(rootDir, "dist/assets"),
+        }
+      ]
+    }),
   ]
 }
