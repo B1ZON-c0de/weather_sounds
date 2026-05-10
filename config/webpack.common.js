@@ -25,6 +25,8 @@ module.exports = {
         }
       ]
     }),
-    new HtmlWebpackPlugin({})
+    new HtmlWebpackPlugin({
+      template: path.resolve(rootDir, "public/index.html"),
+    })
   ]
 }
