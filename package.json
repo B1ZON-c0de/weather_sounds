@@ -12,9 +12,9 @@
   "author": "Roman Andreyko",
   "main": "index.js",
   "scripts": {
-    "dev": "npx webpack serve config/webpack.dev.js",
-    "build:dev": "npx webpack --config config/webpack.dev.js",
-    "build:prod": "npx webpack --config config/webpack.prod.js"
+    "dev": "npx webpack serve ./config/webpack.dev.js",
+    "build:dev": "npx webpack --config ./config/webpack.dev.js",
+    "build:prod": "npx webpack --config ./config/webpack.prod.js"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^14.0.0",
