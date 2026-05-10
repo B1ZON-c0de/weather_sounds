@@ -1,5 +1,6 @@
 const path = require("node:path");
 const CopyPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 const rootDir = path.resolve(__dirname, "..");
@@ -24,5 +25,6 @@ module.exports = {
         }
       ]
     }),
+    new HtmlWebpackPlugin({})
   ]
 }
