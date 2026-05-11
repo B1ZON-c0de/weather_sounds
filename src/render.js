@@ -1,6 +1,7 @@
 export function renderSwitchButtons(quantity, parent) {
   // Создает контейнер для кнопок
   const switchContainer = document.createElement("div")
+  // Добавляет класс для контейнера
   switchContainer.className = "switch-container"
 
   // Добавляет и создает переданное кол-во кнопок
