@@ -1,6 +1,9 @@
 import { setBackground } from "./background";
 
 export function renderSwitchButtons(backgrounds, parent) {
+
+  setBackground(backgrounds[0].url, parent);
+
   // Создает контейнер для кнопок
   const switchContainer = document.createElement("div")
   // Добавляет класс для контейнера
@@ -20,7 +23,7 @@ export function renderSwitchButtons(backgrounds, parent) {
   // Слушатель клика на кнопках
   switchContainer.addEventListener("click", (e) => {
     backgrounds.forEach(background => {
-      if (e.target.closest(`.${background.class}`)) {
+      if (e.target.closest(`.${ background.class }`)) {
         setBackground(background.url, parent)
       }
     })
