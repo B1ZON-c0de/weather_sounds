@@ -1,8 +1,10 @@
 import { setBackground } from "./background";
 
 export function renderSwitchButtons(backgrounds, parent) {
+  const defaultBg = backgrounds[0].url
 
-  setBackground(backgrounds[0].url, parent);
+  // Устанавливает фон по умолчанию
+  setBackground(defaultBg, parent);
 
   // Создает контейнер для кнопок
   const switchContainer = document.createElement("div")
