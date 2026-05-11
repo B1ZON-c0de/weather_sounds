@@ -18,14 +18,10 @@ export function renderSwitchButtons(backgrounds, parent) {
   parent.appendChild(switchContainer);
 
   switchContainer.addEventListener("click", (e) => {
-    if (e.target.closest(".rainy-bg")) {
-      setBackground("rainy-bg", parent)
-    }
-    if (e.target.closest(".summer-bg")) {
-      setBackground("summer-bg", parent)
-    }
-    if (e.target.closest(".winter-bg")) {
-      setBackground("winter-bg", parent)
-    }
+    backgrounds.forEach(background => {
+      if (e.target.closest(`.${background.class}`)) {
+        setBackground(background.class, parent)
+      }
+    })
   })
 }
