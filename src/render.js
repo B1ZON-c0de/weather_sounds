@@ -7,7 +7,7 @@ export function renderSwitchButtons(backgrounds, parent) {
   // Добавляет и создает переданное кол-во кнопок
   backgrounds.forEach(background => {
     const btn = document.createElement("button")
-    btn.classList.add("switch-btn")
+    btn.classList.add(background.class)
     btn.textContent = String(background.id)
     switchContainer.appendChild(btn)
   })
