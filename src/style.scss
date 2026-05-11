@@ -23,3 +23,12 @@
     z-index: -1;
   }
 }
+
+.switch-container {
+  display: flex;
+  gap: 0.25rem;
+
+  & > .switch-btn {
+    padding: 0.25rem 0.75rem;
+  }
+}
