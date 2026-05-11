@@ -17,12 +17,25 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: url("/assets/rainy-bg.jpg") no-repeat center / cover;
+    background: no-repeat center / cover;
     transform: scale(1.05);
     filter: blur(5px);
     z-index: -1;
   }
+
+  &.rainy-bg::before {
+    background-image: url("/assets/rainy-bg.jpg");
+  }
+
+  &.summer-bg::before {
+    background-image: url("/assets/summer-bg.jpg");
+  }
+
+  &.winter-bg::before {
+    background-image: url("/assets/winter-bg.jpg");
+  }
 }
+
 
 .switch-container {
   display: flex;
