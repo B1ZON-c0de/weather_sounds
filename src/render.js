@@ -21,7 +21,7 @@ export function renderSwitchButtons(backgrounds, parent) {
   switchContainer.addEventListener("click", (e) => {
     backgrounds.forEach(background => {
       if (e.target.closest(`.${background.class}`)) {
-        setBackground(background.class, parent)
+        setBackground(background.url, parent)
       }
     })
   })
