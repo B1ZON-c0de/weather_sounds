@@ -1,16 +1,16 @@
-export function renderSwitchButtons(quantity, parent) {
+export function renderSwitchButtons(backgrounds, parent) {
   // Создает контейнер для кнопок
   const switchContainer = document.createElement("div")
   // Добавляет класс для контейнера
   switchContainer.className = "switch-container"
 
   // Добавляет и создает переданное кол-во кнопок
-  for (let i = 0; i < quantity; i++) {
+  backgrounds.forEach(background => {
     const btn = document.createElement("button")
     btn.classList.add("switch-btn")
-    btn.textContent = String(i)
+    btn.textContent = String(background.id)
     switchContainer.appendChild(btn)
-  }
+  })
 
   // Добавляет контейнер с кнопками в в #app
   parent.appendChild(switchContainer);
