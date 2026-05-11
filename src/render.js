@@ -17,6 +17,7 @@ export function renderSwitchButtons(backgrounds, parent) {
   // Добавляет контейнер с кнопками в в #app
   parent.appendChild(switchContainer);
 
+  // Слушатель клика на кнопках
   switchContainer.addEventListener("click", (e) => {
     backgrounds.forEach(background => {
       if (e.target.closest(`.${background.class}`)) {
