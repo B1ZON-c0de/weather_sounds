@@ -2,6 +2,7 @@ const path = require("node:path");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 
 const rootDir = path.resolve(__dirname, "..");
@@ -29,7 +30,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(rootDir, "public/index.html"),
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new ESLintPlugin()
   ],
   module: {
     rules: [
