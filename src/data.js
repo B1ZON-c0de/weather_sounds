@@ -4,9 +4,30 @@ import winterBg from "./assets/winter-bg.jpg"
 import rainySvg from "./assets/icons/cloud-rain.svg"
 import winterSvg from "./assets/icons/cloud-snow.svg"
 import summerSvg from "./assets/icons/sun.svg"
+import rainyAudio from "./assets/sounds/rain.mp3"
+import summerAudio from "./assets/sounds/summer.mp3"
+import winterAudio from "./assets/sounds/winter.mp3"
 
 export const BACKGROUNDS = [
-  { id: 1, class: "rainy-button", url: rainyBg, svg: rainySvg },
-  { id: 2, class: "summer-button", url: summerBg, svg: summerSvg },
-  { id: 3, class: "winter-button", url: winterBg, svg: winterSvg },
+  {
+    id: 1,
+    class: "rainy-button",
+    url: rainyBg,
+    svg: rainySvg,
+    audio: rainyAudio
+  },
+  {
+    id: 2,
+    class: "summer-button",
+    url: summerBg,
+    svg: summerSvg,
+    audio: summerAudio
+  },
+  {
+    id: 3,
+    class: "winter-button",
+    url: winterBg,
+    svg: winterSvg,
+    audio: winterAudio
+  },
 ]
