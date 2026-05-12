@@ -15,7 +15,9 @@ export function renderSwitchButtons(backgrounds, parent) {
   backgrounds.forEach(background => {
     const btn = document.createElement("button")
     btn.classList.add(background.class)
-    btn.textContent = String(background.id)
+    const parser = new DOMParser()
+    const svg = parser.parseFromString(background.svg, "image/svg+xml").documentElement
+    btn.appendChild(svg)
     switchContainer.appendChild(btn)
   })
 
