@@ -30,6 +30,7 @@ export function renderSwitchButtons(backgrounds, parent) {
     backgrounds.forEach(background => {
       if (e.target.closest(`.${ background.class }`)) {
         setBackground(background.url, parent)
+        background.audio.play()
       }
     })
   })
