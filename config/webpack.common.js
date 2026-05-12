@@ -18,8 +18,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(rootDir, "public/*.png"),
-          to: path.resolve(rootDir, "dist"),
+          from: "public/*.png",
+          to: "[contenthash]-[name].[ext]",
         }
       ]
     }),
