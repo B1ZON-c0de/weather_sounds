@@ -36,5 +36,10 @@
     border: 1px solid #e3e3e3;
     border-radius: 24px;
     padding: 5rem;
+
+    & > svg {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
   }
 }
