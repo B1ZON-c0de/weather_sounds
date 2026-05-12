@@ -25,14 +25,21 @@ export function renderSwitchButtons(backgrounds, parent) {
   // Добавляет контейнер с кнопками в в #app
   parent.appendChild(switchContainer);
 
+  let currentAudio = null;
+
   // Слушатель клика на кнопках
   switchContainer.addEventListener("click", (e) => {
     backgrounds.forEach(background => {
       if (e.target.closest(`.${ background.class }`)) {
         setBackground(background.url, parent)
+        if (currentAudio && currentAudio !== background.audio) {
+          currentAudio.pause()
+          currentAudio.currentTime = 0
+        }
         if (!background.audio.paused) {
           background.audio.pause()
         } else {
+          currentAudio = background.audio
           background.audio.play()
         }
       }
