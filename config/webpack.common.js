@@ -19,7 +19,7 @@ module.exports = {
       patterns: [
         {
           from: "public/*.png",
-          to: "[contenthash]-[name].[ext]",
+          to: "[name]-[contenthash][ext]",
         }
       ]
     }),
