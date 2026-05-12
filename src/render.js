@@ -1,6 +1,6 @@
 import { setBackground } from "./background";
 
-export function renderSwitchButtons(backgrounds, parent) {
+export function renderSwitchButtons(backgrounds, parent, audio) {
   const defaultBg = backgrounds[0].url
 
   // Устанавливает фон по умолчанию
@@ -21,25 +21,21 @@ export function renderSwitchButtons(backgrounds, parent) {
     btn.appendChild(svg)
     switchContainer.appendChild(btn)
   })
-
   // Добавляет контейнер с кнопками в в #app
   parent.appendChild(switchContainer);
-
-  let currentAudio = null;
-
   // Слушатель клика на кнопках
   switchContainer.addEventListener("click", (e) => {
     backgrounds.forEach(background => {
       if (e.target.closest(`.${ background.class }`)) {
         setBackground(background.url, parent)
-        if (currentAudio && currentAudio !== background.audio) {
-          currentAudio.pause()
-          currentAudio.currentTime = 0
+        if (audio.current && audio.current !== background.audio) {
+          audio.current.pause()
+          audio.current.currentTime = 0
         }
         if (!background.audio.paused) {
           background.audio.pause()
         } else {
-          currentAudio = background.audio
+          audio.current = background.audio
           background.audio.play()
         }
       }
@@ -55,11 +51,16 @@ export function renderTitle(text, parent) {
   parent.appendChild(title)
 }
 
-export function renderVolumeSelect(min = 0, max = 100, parent) {
+export function renderVolumeSelect(min = 0, max = 100, parent, audio) {
   const volume = document.createElement("input")
   volume.type = "range"
   volume.min = String(min)
   volume.max = String(max)
+
+  volume.addEventListener("change", e => {
+    if (!audio.current) return
+    audio.current.volume = Number(e.target.value) / 100
+  })
 
   parent.appendChild(volume)
 }
