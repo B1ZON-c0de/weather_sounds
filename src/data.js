@@ -14,20 +14,20 @@ export const BACKGROUNDS = [
     class: "rainy-button",
     url: rainyBg,
     svg: rainySvg,
-    audio: rainyAudio
+    audio: new Audio(rainyAudio)
   },
   {
     id: 2,
     class: "summer-button",
     url: summerBg,
     svg: summerSvg,
-    audio: summerAudio
+    audio: new Audio(summerAudio)
   },
   {
     id: 3,
     class: "winter-button",
     url: winterBg,
     svg: winterSvg,
-    audio: winterAudio
+    audio: new Audio(winterAudio)
   },
 ]
