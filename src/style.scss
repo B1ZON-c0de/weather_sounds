@@ -31,6 +31,12 @@
 
     transition: background-image .4s ease-in-out;
   }
+
+  & > h1 {
+    font-size: 4rem;
+    font-family: "Roboto", sans-serif;
+    color: coral;
+  }
 }
 
 
