@@ -18,12 +18,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(rootDir, "public/assets"),
-          to: path.resolve(rootDir, "dist/assets"),
-        },
-        {
-          from: path.resolve(rootDir, "public/fonts"),
-          to: path.resolve(rootDir, "dist/fonts"),
+          from: path.resolve(rootDir, "public/*.png"),
+          to: path.resolve(rootDir, "dist"),
         }
       ]
     }),
