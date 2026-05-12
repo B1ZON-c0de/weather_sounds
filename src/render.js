@@ -42,3 +42,12 @@ export function renderTitle(text, parent) {
 
   parent.appendChild(title)
 }
+
+export function renderVolumeSelect(min = 0, max = 100, parent) {
+  const volume = document.createElement("input")
+  volume.type = "range"
+  volume.min = String(min)
+  volume.max = String(max)
+
+  parent.appendChild(volume)
+}
