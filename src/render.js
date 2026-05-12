@@ -1,4 +1,6 @@
 import { setBackground } from "./background";
+import pauseBtn from "./assets/icons/pause.svg"
+import { createSVG } from "./shared";
 
 export function renderSwitchButtons(backgrounds, parent, audio) {
   const defaultBg = backgrounds[0].url
@@ -16,8 +18,7 @@ export function renderSwitchButtons(backgrounds, parent, audio) {
     const btn = document.createElement("button")
     btn.classList.add(background.class)
     btn.style.setProperty("background", `url(${ background.url }) no-repeat center / cover`)
-    const parser = new DOMParser()
-    const svg = parser.parseFromString(background.svg, "image/svg+xml").documentElement
+    const svg = createSVG(background.svg)
     btn.appendChild(svg)
     switchContainer.appendChild(btn)
   })
@@ -25,21 +26,39 @@ export function renderSwitchButtons(backgrounds, parent, audio) {
   parent.appendChild(switchContainer);
   // Слушатель клика на кнопках
   switchContainer.addEventListener("click", (e) => {
-    backgrounds.forEach(background => {
-      if (e.target.closest(`.${ background.class }`)) {
-        setBackground(background.url, parent)
-        if (audio.current && audio.current !== background.audio) {
-          audio.current.pause()
-          audio.current.currentTime = 0
+    const currentBtn = e.target.closest("button")
+    const background = backgrounds.find(bg => currentBtn.classList.contains(bg.class))
+
+    if (currentBtn) {
+      setBackground(background.url, parent)
+      if (audio.current && audio.current !== background.audio) {
+        const prevBg = backgrounds.find(bg => bg.audio === audio.current)
+        const prevBtn = document.querySelector(`.${ prevBg.class }`)
+        if (prevBtn) {
+          prevBtn.replaceChildren(createSVG(prevBg.svg))
         }
-        if (!background.audio.paused) {
-          background.audio.pause()
-        } else {
-          audio.current = background.audio
-          background.audio.play()
-        }
+        audio.current.pause()
+        audio.current.currentTime = 0
       }
-    })
+      if (audio.current === background.audio) {
+
+        if (!audio.current.paused) {
+          audio.current.pause()
+          currentBtn.replaceChildren(createSVG(background.svg))
+          return
+        }
+
+        audio.current.play()
+        currentBtn.replaceChildren(createSVG(pauseBtn))
+        return
+      }
+
+      audio.current = background.audio
+      audio.current.play()
+
+      currentBtn.replaceChildren(createSVG(pauseBtn))
+    }
+
   })
 }
 
