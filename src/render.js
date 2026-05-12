@@ -34,3 +34,11 @@ export function renderSwitchButtons(backgrounds, parent) {
     })
   })
 }
+
+export function renderTitle(text, parent) {
+  const title = document.createElement("h1")
+
+  title.textContent = text
+
+  parent.appendChild(title)
+}
