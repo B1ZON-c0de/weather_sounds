@@ -15,6 +15,7 @@ export function renderSwitchButtons(backgrounds, parent) {
   backgrounds.forEach(background => {
     const btn = document.createElement("button")
     btn.classList.add(background.class)
+    btn.style.setProperty("background", `url(${ background.url }) no-repeat center / cover`)
     const parser = new DOMParser()
     const svg = parser.parseFromString(background.svg, "image/svg+xml").documentElement
     btn.appendChild(svg)
