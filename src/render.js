@@ -31,6 +31,7 @@ export function renderSwitchButtons(backgrounds, parent, audio) {
 
     if (currentBtn) {
       setBackground(background.url, parent)
+      // Переключает иконку и ставит на паузу так же сбрасывает аудио к началу
       if (audio.current && audio.current !== background.audio) {
         const prevBg = backgrounds.find(bg => bg.audio === audio.current)
         const prevBtn = document.querySelector(`.${ prevBg.class }`)
@@ -40,6 +41,7 @@ export function renderSwitchButtons(backgrounds, parent, audio) {
         audio.current.pause()
         audio.current.currentTime = 0
       }
+      // Логика установки паузы на аудио
       if (audio.current === background.audio) {
 
         if (!audio.current.paused) {
@@ -53,6 +55,7 @@ export function renderSwitchButtons(backgrounds, parent, audio) {
         return
       }
 
+      // Логика переключения трека
       audio.current = background.audio
       audio.current.play()
 
