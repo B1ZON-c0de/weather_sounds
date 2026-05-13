@@ -1,4 +1,4 @@
-import { setBackground } from "./background";
+import { setBackground } from "./background.ts";
 import pauseBtn from "./assets/icons/pause.svg"
 import { createSVG } from "./shared";
 
