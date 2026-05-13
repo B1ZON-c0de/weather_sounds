@@ -56,6 +56,9 @@ const config: webpack.Configuration = {
         type: "asset/resource",
       }
     ]
+  },
+  resolve: {
+    extensions: [ ".ts", ".tsx", ".js" ]
   }
 }
 export default config;
