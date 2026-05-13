@@ -4,7 +4,7 @@ import { createSVG } from "./shared";
 import { IBackground } from "./data";
 import { IAudio } from "./index";
 
-export function renderSwitchButtons(backgrounds: IBackground[], parent: Element, audio: IAudio){
+export function renderSwitchButtons(backgrounds: IBackground[], parent: HTMLElement, audio: IAudio){
   const defaultBg = backgrounds[0].url
 
   // Устанавливает фон по умолчанию
