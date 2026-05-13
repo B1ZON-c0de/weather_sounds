@@ -1,12 +1,9 @@
 import "./style.scss"
 import { renderSwitchButtons, renderTitle, renderVolumeSelect } from "./render";
 import { BACKGROUNDS } from "./data";
+import { IAudio } from "./types";
 
 const app: HTMLElement = document.querySelector("#app")!;
-
-export interface IAudio {
-  current: HTMLAudioElement | null;
-}
 
 const audio: IAudio = {
   current: null

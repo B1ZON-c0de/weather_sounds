@@ -1,8 +1,7 @@
 import { setBackground } from "./background";
 import pauseBtn from "./assets/icons/pause.svg"
 import { createSVG } from "./shared";
-import { IBackground } from "./data";
-import { IAudio } from "./index";
+import type { IBackground, IAudio } from "./types";
 
 export function renderSwitchButtons(backgrounds: IBackground[], parent: HTMLElement, audio: IAudio){
   const defaultBg = backgrounds[0].url
