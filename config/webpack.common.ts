@@ -3,12 +3,13 @@ import CopyPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
+import webpack from "webpack";
 import "webpack-dev-server"
 
 
 const rootDir = path.resolve(__dirname, "..");
 
-module.exports = {
+const config: webpack.Configuration = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(rootDir, 'dist'),
@@ -34,9 +35,9 @@ module.exports = {
     rules: [
       {
         test: /\.s[ac]ss$/,
-        use: [MiniCssExtractPlugin.loader, {
+        use: [ MiniCssExtractPlugin.loader, {
           loader: "css-loader",
-        }, "sass-loader"],
+        }, "sass-loader" ],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
@@ -57,3 +58,4 @@ module.exports = {
     ]
   }
 }
+export default config;
