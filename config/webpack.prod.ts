@@ -1,4 +1,4 @@
-const commonConfig = require('./webpack.common.js')
+const commonConfig = require('./webpack.common.ts')
 const { merge } = require("webpack-merge");
 
 module.exports = merge(commonConfig, {

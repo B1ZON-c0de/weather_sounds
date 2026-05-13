@@ -8,7 +8,7 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 const rootDir = path.resolve(__dirname, "..");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     path: path.resolve(rootDir, 'dist'),
     filename: '[name]-[contenthash].js',
