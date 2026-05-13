@@ -40,7 +40,7 @@ const config: webpack.Configuration = {
         }, "sass-loader" ],
       },
       {
-        test: /\.tsx?$.$/,
+        test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
