@@ -4,4 +4,11 @@ import { merge } from "webpack-merge";
 export default merge(commonConfig, {
   mode: 'production',
   devtool: 'hidden-source-map',
+  optimization: {
+    minimize: true,
+    splitChunks: {
+      chunks: 'all',
+    },
+    runtimeChunk: "single",
+  }
 })
