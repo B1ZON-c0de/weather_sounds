@@ -50,6 +50,7 @@
     padding: 5rem;
 
     & > svg {
+      pointer-events: none;
       width: 3.5rem;
       height: 3.5rem;
     }
