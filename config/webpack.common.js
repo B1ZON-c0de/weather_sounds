@@ -3,13 +3,15 @@ import CopyPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
-import webpack from "webpack";
 import "webpack-dev-server"
+import { fileURLToPath } from "node:url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const rootDir = path.resolve(__dirname, "..");
 
-const config: webpack.Configuration = {
+export default {
   entry: './src/index.ts',
   output: {
     path: path.resolve(rootDir, 'dist'),
@@ -35,9 +37,9 @@ const config: webpack.Configuration = {
     rules: [
       {
         test: /\.s[ac]ss$/,
-        use: [ MiniCssExtractPlugin.loader, {
+        use: [MiniCssExtractPlugin.loader, {
           loader: "css-loader",
-        }, "sass-loader" ],
+        }, "sass-loader"],
       },
       {
         test: /\.tsx?$/,
@@ -63,7 +65,6 @@ const config: webpack.Configuration = {
     ]
   },
   resolve: {
-    extensions: [ ".ts", ".tsx", ".js" ]
+    extensions: [".ts", ".tsx", ".js"]
   }
 }
-export default config;

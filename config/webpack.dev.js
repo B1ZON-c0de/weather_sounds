@@ -1,4 +1,4 @@
-import commonConfig from './webpack.common';
+import commonConfig from './webpack.common.js';
 import { merge } from "webpack-merge";
 
 export default merge(commonConfig, {

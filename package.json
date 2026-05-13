@@ -11,10 +11,11 @@
   "license": "ISC",
   "author": "Roman Andreyko",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "npx webpack serve --config config/webpack.dev.ts",
-    "build:dev": "npx webpack --config config/webpack.dev.ts",
-    "build:prod": "npx webpack --config config/webpack.prod.ts"
+    "dev": "npx webpack serve --config config/webpack.dev.js",
+    "build:dev": "npx webpack --config config/webpack.dev.js",
+    "build:prod": "npx webpack --config config/webpack.prod.js"
   },
   "devDependencies": {
     "@eslint/css": "^1.2.0",
@@ -31,7 +32,6 @@
     "sass": "^1.99.0",
     "sass-loader": "^16.0.8",
     "ts-loader": "^9.5.7",
-    "tsx": "^4.21.0",
     "typescript": "^6.0.3",
     "webpack": "^5.106.2",
     "webpack-cli": "^7.0.2",
