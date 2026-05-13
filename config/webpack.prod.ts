@@ -1,7 +1,7 @@
-const commonConfig = require('./webpack.common.ts')
-const { merge } = require("webpack-merge");
+import commonConfig from './webpack.common';
+import { merge } from "webpack-merge";
 
-module.exports = merge(commonConfig, {
+export default merge(commonConfig, {
   mode: 'production',
   devtool: 'hidden-source-map',
 })
