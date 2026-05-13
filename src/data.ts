@@ -8,12 +8,12 @@ import rainyAudio from "./assets/sounds/rain.mp3"
 import summerAudio from "./assets/sounds/summer.mp3"
 import winterAudio from "./assets/sounds/winter.mp3"
 
-export interface IBackground {
+export interface IBackground{
   id: number;
   class: string;
   url: string;
   svg: string;
-  audio: AudioData
+  audio: HTMLAudioElement;
 }
 
 export const BACKGROUNDS = [
