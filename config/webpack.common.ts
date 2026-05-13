@@ -1,8 +1,9 @@
-const path = require("node:path");
-const CopyPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
+import path from "node:path";
+import CopyPlugin from "copy-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ESLintPlugin from "eslint-webpack-plugin";
+import "webpack-dev-server"
 
 
 const rootDir = path.resolve(__dirname, "..");
